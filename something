@@ -1,0 +1,88 @@
+1. Игра с открытым миром
+
+Menu:
+- Start (new game)
+- Continue
+
+- Optional
+  - Settings
+  - Achivments
+
+- Quit
+
+
+Scenes:
+- Menu
+
+- Start location
+- Entrance of Tower
+- Body of Tower
+- Top of Tower
+
+- Перемещение между сценами осуществляется с помощью "дверей"
+
+
+Goals:
+- Collectioning
+- Get ending
+- Achivments
+
+
+Character:
+- Jump
+- Run
+- Attack 
+
+- Health
+
+- Optional {
+  - 
+}
+
+
+Enemies:
+- Patrol
+- Agr
+
+- optional{
+  - neutral
+  - evil
+}
+
+
+NPC:
+- Talk
+- Sell
+
+
+
+Что мы будем делать:
+- Рисовать спрайты
+- Всё остальное
+  - Придать физику объекту
+  - Дизайн локаций
+  - Дизайнить Игрока/Мобов/НПС
+- Склеить это всё в единое целое
+
+
+Спрайтами занимаются 2 человека
+- Один рисует уровни
+- Другой рисует персонажей/мобов
+- Помогают друг другу
+
+- Максат
+- Егор
+
+Остальным 3 человека
+- Тут я
+- Дима
+- Коля
+
+
+- Мрачные тона
+- ГГ {Рыцарь, Самурай}
+
+
+scenes design:
+- Start location:
+  - На улице
