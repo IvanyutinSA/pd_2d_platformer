@@ -6,13 +6,19 @@ using UnityEngine;
 public class PlayerMotions : MonoBehaviour
 {
     [SerializeField] LayerMask platformLayerMask;
-    public float WalkSpeed;
-    public float JumpPower;
+    public float WalkSpeed = 10;
+    public float JumpPower = 400;
     public long jumpSpan = 10000000;
 
     private long lastTimeJump = 0;
-    
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        WalkSpeed = 10;
+        JumpPower = 400;
+        platformLayerMask = LayerMask.GetMask("Platform");
+    }
     void Start()
     {
         WalkSpeed = 10;
