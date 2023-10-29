@@ -18814,7 +18814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934763241242650482, guid: cf1f9a5327103ea4da55d12dcf591497, type: 3}
       propertyPath: m_Name
-      value: Teleport0
+      value: ToMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1f9a5327103ea4da55d12dcf591497, type: 3}
@@ -30946,7 +30946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934763241242650482, guid: cf1f9a5327103ea4da55d12dcf591497, type: 3}
       propertyPath: m_Name
-      value: TeleportToScene0
+      value: ToMain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1f9a5327103ea4da55d12dcf591497, type: 3}

@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void NewGamePressed()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Main");
     }
 
     public void QuetPressed()
