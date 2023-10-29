@@ -6,40 +6,20 @@ using UnityEngine.SceneManagement;
 public class SceneSwitch : MonoBehaviour
 {
     [SerializeField] LayerMask playerLayerMask;
-    int GetSceneId()
+    public string sceneName;
+    string GetSceneName()
     {
-        int sceneId = -1;
-        for (int i = 0; i < name.Length; i++)
+        if (sceneName.Length > 0)
         {
-            if (int.TryParse(name[i].ToString(), out sceneId))
-            {
-                sceneId = int.Parse(name.Substring(i));
-                break;
-            }
-            if (i == name.Length - 1)
-            {
-                //Application.Quit();
-                return 0;
-            }
+            return sceneName;
         }
-        return sceneId + 1;
+        return name.Substring(2);
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //if (true)
         if (collider.gameObject.transform.tag == "Player")
         {
-            SceneManager.LoadScene(GetSceneId());
+            SceneManager.LoadScene(GetSceneName());
         }
-    }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
