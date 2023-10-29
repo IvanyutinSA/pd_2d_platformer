@@ -18,10 +18,11 @@ public class SceneSwitch : MonoBehaviour
             }
             if (i == name.Length - 1)
             {
-                Application.Quit();
+                //Application.Quit();
+                return 0;
             }
         }
-        return sceneId;
+        return sceneId + 1;
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
