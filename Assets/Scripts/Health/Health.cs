@@ -17,7 +17,9 @@ public class Health : MonoBehaviour
         Debug.Log(lives);
         if (lives <= 0)
         {
-            Debug.Log("Юнит погиб");
+            Debug.Log("Object destroyed");
         }
     }
+    public int GetCurrentLives() { return lives; }
+    public int GetMaxLives() { return livesMax; }
 }
