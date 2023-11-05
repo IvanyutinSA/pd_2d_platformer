@@ -15,12 +15,6 @@ public class Enemy_Passive : MonoBehaviour
 
     private void Update()
     {
-        move();
-//        passive_attack();
-    }
-
-    void move() 
-    {
         if (movingForward)
         {
             if (transform.position.x < position_fnish)
@@ -46,9 +40,4 @@ public class Enemy_Passive : MonoBehaviour
             }
         }
     }
-
-/*    void passive_attack() 
-    {
-        
-    }*/
 }
