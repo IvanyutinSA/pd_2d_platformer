@@ -7,11 +7,11 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Enemy_Passive : MonoBehaviour
 {
 
-    public float speed = 3; // Скорость движения объекта
-    public float position_start = 3.4f ; // каординаты от котроыой и до которой движиться объект
+    public float speed = 3; // speed enemy
+    public float position_start = 3.4f ; // move from start to fnish
     public float position_fnish = 18.3f ;
 
-    private bool movingForward = true; // Флаг, указывающий, двигается ли объект вперед
+    private bool movingForward = true; // forward direction assignment
 
     private void Update()
     {
@@ -19,7 +19,7 @@ public class Enemy_Passive : MonoBehaviour
         {
             if (transform.position.x < position_fnish)
             {
-                transform.Translate(transform.right * speed * Time.deltaTime); // Движение вперед
+                transform.Translate(transform.right * speed * Time.deltaTime); // moving foward
 
             }
             else
@@ -31,7 +31,7 @@ public class Enemy_Passive : MonoBehaviour
         {
             if (transform.position.x > position_start)
             {
-                transform.Translate(-transform.right * speed * Time.deltaTime); // Движение back
+                transform.Translate(-transform.right * speed * Time.deltaTime); // movng back
 
             }
             else
