@@ -6,72 +6,50 @@ using UnityEngine;
 public class PlayerMotions : MonoBehaviour
 {
     [SerializeField] LayerMask platformLayerMask;
-    public float WalkSpeed = 10;
-    public float JumpPower = 400;
-    public long jumpSpan = 10000000;
+    [SerializeField] private float speed = 9f;
+    [SerializeField] private float jumpForce = 7f;
 
-    private long lastTimeJump = 0;
+    private bool isGrounded = false;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        WalkSpeed = 10;
-        JumpPower = 400;
-        platformLayerMask = LayerMask.GetMask("Platform");
-    }
-    void Start()
-    {
-        WalkSpeed = 10;
-        JumpPower = 400;
-        platformLayerMask = LayerMask.GetMask("Platform");
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        Move();
-        Jump();
+        CheckGround();
     }
 
-    void Move()
+    private void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate((new Vector2(horizontalInput, 0))*Time.deltaTime*WalkSpeed);
-    }
-
-    bool IsGrounded()
-    {
-        var boxCollider2d = GetComponent<BoxCollider2D>();
-        float extraHeight = 1f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(
-            boxCollider2d.bounds.center,
-            boxCollider2d.bounds.size,
-            0f,
-            Vector2.down,
-            extraHeight,
-            platformLayerMask
-        );
-
-        Debug.Log(raycastHit.collider);
-        return raycastHit.collider != null;
-    }
-
-    void Jump()
-    {
-        if (!IsGrounded())
+        if (Input.GetButton("Horizontal"))
         {
-            return;
+            Run();
         }
-        if (!(Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow)))
+        if (isGrounded && Input.GetButtonDown("Jump"))
         {
-            return;
+            Jump();
         }
-        long time = DateTime.Now.Ticks;
-        if (time - lastTimeJump < jumpSpan)
-        {
-            return;
-        }
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up*JumpPower);
-        lastTimeJump = time;
+    }
+
+    private void Run()
+    {
+        Vector3 dir = transform.right * Input.GetAxis("Horizontal");
+
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    private void CheckGround()
+    {
+        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+        isGrounded = collider.Length > 1;
     }
 }
