@@ -1,0 +1,111 @@
+class Player
+{
+    Weapon _weapon = new Weapon('Lance');
+    public void Attack()
+    {
+        weapon.Attack(gameObject.Coordinate)
+    }
+}
+
+
+class Enemy()
+{
+    public Update()
+    {
+        if (find_entity)
+        {
+            Attack();
+        }
+    }
+
+    findEnemy()
+    {
+        ...
+    }
+
+    public void Attack()
+    {
+        if (!ready)
+        {
+            pass;
+        }
+        else
+        {
+            AnimationsBeforeAttack(); // Delay здесь
+            weapon.Attack();
+            MakeCooldown();
+        }
+    }
+
+    private void Update() 
+    {
+        if (FindEnemy)
+        {
+            Attack();
+        }
+        else
+        {
+            Move();
+        }
+
+    }
+
+}
+
+class PassiveEnemy
+{
+    public Update()
+    {
+        if (find_entity)
+        {
+            Attack();
+        }
+    }
+
+    public Attack()
+    {
+        weapon.Attack();
+    }
+}
+
+
+interface IWeapon // Оружие
+{
+    int _damage = -3;
+    float detectionRange = 0.7f;
+
+    public Weapon(int damage){
+        _damage = damage;
+    }
+    private void Attack(Vector2 coordinates) //inflicts a home attack if the player does not leave the target area
+    {
+        float distanceToPlayer = Vector3.Distance(coordinates, player.position);
+
+        if (distanceToPlayer <= detectionRange) 
+        {
+            Health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+            Health.Change(_damage);
+        }
+    }
+}
+
+interface IWeapo
+
+class Flask: IWeapon;
+class Lance: IWeapon;
+class Sword: IWeapon;
+class BodyDamage: IWeapon;
+
+
+class Flask
+{
+    int _heal = 3;
+
+    public void Heal(GameObject object)
+    {
+        object.GetComponent<Health>().Change(_heal);
+    }
+}
+
+
+sword = Weapon(3)
