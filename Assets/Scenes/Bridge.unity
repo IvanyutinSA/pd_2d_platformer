@@ -26360,7 +26360,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 315886943547178280, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
   m_PrefabInstance: {fileID: 193343738}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &753083373
+--- !u!114 &753083378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26372,13 +26372,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d325e541787c14d8a48d97aaf7a714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  Health: {fileID: 0}
   speed: 3
   position_start: 3.4
   position_fnish: 18.3
-  player: {fileID: 0}
-  Health: {fileID: 0}
   detectionRange: 0.8
-  amount: -1
   delay: 1
 --- !u!1 &1051395478
 GameObject:
@@ -33517,7 +33516,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &2070724637
+--- !u!114 &2070724640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33529,15 +33528,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8218d12d4e3fc4caab3d272dc5e905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  Health: {fileID: 0}
   speed: 3
   position_start: 95
   position_fnish: 110
-  player: {fileID: 0}
-  Health: {fileID: 0}
   detectionRange: 1.6
-  amount: -2
-  delay: 0.7
-  cooldown: 1
+  delay: 0.8
 --- !u!1001 &204618483899233190
 PrefabInstance:
   m_ObjectHideFlags: 0

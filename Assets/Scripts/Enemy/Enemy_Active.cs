@@ -8,64 +8,65 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Enemy_Active : MonoBehaviour
 {
 
+    public UnityEngine.Transform player;// for player positioning 
+    [SerializeField] private Health Health;
+    //[SerializeField] private IWeapon IWeapon;
+
     public float speed = 3; // speed enemy
     public float position_start = 95f; // move from start to fnish
     public float position_fnish = 110f;
-
     private bool movingForward = true; // forward direction assignment
 
-
-    public UnityEngine.Transform player; // for player positioning
-    [SerializeField] private Health Health;//hp
-
     public float detectionRange = 1.6f;//  damage distance
-    public int amount = -2;  // damage
+                                       //    public int amount = -2;  // damage
     private bool readiness_attack = true; // readiness to attack
+    public float delay = 0.8f; // delay before impact
 
-    public float delay = 0.7f; // delay before impact
-    public float cooldown = 1f; // delay after impact
-
-    private void Update() 
+    public void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform; // for player positioning
-
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position); //checking the distance between the player and the enemy
-
-        if (distanceToPlayer <= detectionRange) // player in the zone
+        if (EnemyNearby() && readiness_attack)
         {
-            if (readiness_attack)
-            {
-                readiness_attack = false;
-                Invoke("Delay", delay); //calling a method with a delay
-            }
+            readiness_attack = false;
+            Invoke("Attack", delay);
         }
+
         else
         {
             Move();
         }
     }
-
-    private void Delay() //inflicts a home attack if the player does not leave the target area
+    public bool EnemyNearby()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= detectionRange) 
-        {
-            Health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-            Health.Change(amount);
+        player = GameObject.FindGameObjectWithTag("Player").transform; // for player positioning
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);// distance  player and the enemy
 
-        }
-
-        Invoke("Cooldown", cooldown); //calling a method with a delay
-        Move();
+        return distanceToPlayer <= detectionRange;
     }
 
-    private void Cooldown()
+
+
+    public void Attack()
+    {
+        AnimationsBeforeAttack();
+        if (EnemyNearby())
+        {
+            //IWeapon.Attack();
+            Debug.Log("damage");
+        }
+        Invoke("AnimationAfterAttack", delay);
+    }
+
+    private void AnimationsBeforeAttack()
+    {
+
+    }
+    private void AnimationAfterAttack()
     {
         readiness_attack = true;
     }
 
-    private void Move() // simple enemy movement
+    private void Move() //simple enemy movement
     {
         if (movingForward)
         {
@@ -93,3 +94,6 @@ public class Enemy_Active : MonoBehaviour
         }
     }
 }
+
+
+
