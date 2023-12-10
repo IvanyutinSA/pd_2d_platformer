@@ -8637,7 +8637,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1334015447996128336, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: lives
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1334015447996128336, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: livesMax
