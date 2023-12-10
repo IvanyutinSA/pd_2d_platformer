@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private Sprite damageHeart;
     private GameObject player;
     private int curHp;
+    private int maxHp;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,8 +22,9 @@ public class HUD : MonoBehaviour
     void Update()
     {
         curHp = player.GetComponent<Health>().GetCurrentLives();
+        maxHp = player.GetComponent<Health>().GetMaxLives();
 
-        for (int i = 0; i < curHp; i++)
+        for (int i = 0; i < maxHp; i++)
         {
             if (i < curHp)
             {
