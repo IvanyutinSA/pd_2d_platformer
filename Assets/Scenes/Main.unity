@@ -230,7 +230,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2226,6 +2226,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8648814113195988674, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
   m_PrefabInstance: {fileID: 8648814112298532709}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &214154598 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
+  m_PrefabInstance: {fileID: 8648814112298532709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &453324303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2242,7 @@ GameObject:
   - component: {fileID: 453324304}
   - component: {fileID: 453324305}
   - component: {fileID: 453324306}
+  - component: {fileID: 453324307}
   m_Layer: 0
   m_Name: 02
   m_TagString: Untagged
@@ -2306,7 +2312,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -2320,13 +2326,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453324303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 214154594}
   parallaxEffect: 0.5
+--- !u!114 &453324307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453324303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followingTarget: {fileID: 214154598}
+  parallaxStrength: 0.7
+  disableVeticalParallax: 1
+  cam: {fileID: 214154594}
 --- !u!4 &529086187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3545855612167386483, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
@@ -2343,6 +2365,7 @@ GameObject:
   - component: {fileID: 676860280}
   - component: {fileID: 676860281}
   - component: {fileID: 676860282}
+  - component: {fileID: 676860283}
   m_Layer: 0
   m_Name: 01
   m_TagString: Untagged
@@ -2412,7 +2435,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -2426,13 +2449,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676860279}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 214154594}
   parallaxEffect: 0.2
+--- !u!114 &676860283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676860279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followingTarget: {fileID: 214154598}
+  parallaxStrength: 0.5
+  disableVeticalParallax: 1
+  cam: {fileID: 214154594}
 --- !u!1 &896989588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,7 +2795,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -4926,6 +4965,7 @@ GameObject:
   - component: {fileID: 1215546993}
   - component: {fileID: 1215546994}
   - component: {fileID: 1215546995}
+  - component: {fileID: 1215546996}
   m_Layer: 0
   m_Name: 03
   m_TagString: Untagged
@@ -4995,7 +5035,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -5009,13 +5049,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215546992}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 214154594}
   parallaxEffect: 0.7
+--- !u!114 &1215546996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215546992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followingTarget: {fileID: 214154598}
+  parallaxStrength: 0.9
+  disableVeticalParallax: 1
+  cam: {fileID: 214154594}
 --- !u!1 &1346399413
 GameObject:
   m_ObjectHideFlags: 0
@@ -5175,7 +5231,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -25856,6 +25912,7 @@ GameObject:
   - component: {fileID: 1515560991}
   - component: {fileID: 1515560992}
   - component: {fileID: 1515560993}
+  - component: {fileID: 1515560994}
   m_Layer: 0
   m_Name: 00
   m_TagString: Untagged
@@ -25925,7 +25982,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -25939,13 +25996,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515560990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 214154594}
   parallaxEffect: 0
+--- !u!114 &1515560994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515560990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followingTarget: {fileID: 214154598}
+  parallaxStrength: 0.3
+  disableVeticalParallax: 1
+  cam: {fileID: 214154594}
 --- !u!1 &1553806692
 GameObject:
   m_ObjectHideFlags: 0
@@ -26450,7 +26523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3545855612167386482, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3545855612167386483, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: m_RootOrder
