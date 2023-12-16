@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ManageHP : MonoBehaviour
+{
+    private int hp;
+    private void GetDamage(GameObject object)
+    {
+        PlayerInfo.HP -= object.Damage;
+        if (PlayerInfo.HP <= 0)
+        {
+            KillObject(gameObject);
+        }
+    }
+    private void Awake()
+    {
+        hp = GetSavedHP(gameObject);
+    }
+    private void OnDestroy()
+    {
+        SetSavedHP(gameObject, hp);
+    }
+    public void OnCollisionEnter2D(Collision collision)
+    {
+        if (collision.gameObject.tag == "Weapon")
+        {
+            GetDamage(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Heal")
+        {
+            Heal(collision.gameObject);
+        }
+    }
+}
