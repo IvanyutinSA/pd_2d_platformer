@@ -132,11 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8648814112288801440, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 178.19998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8648814112288801440, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -82.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8648814112288801440, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalPosition.z
@@ -164,11 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -220.47998
+      value: -12.58
       objectReference: {fileID: 0}
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 93.51001
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3648,6 +3648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3545855612167386481, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3545855612167386482, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -3702,7 +3706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3545855612167386484, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: jumpForce
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
