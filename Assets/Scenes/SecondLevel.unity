@@ -1026,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8648814112288801440, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8648814112288801443, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_Follow
       value: 
@@ -1077,6 +1081,10 @@ PrefabInstance:
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648814113906182374, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
+      propertyPath: m_CameraDistance
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
