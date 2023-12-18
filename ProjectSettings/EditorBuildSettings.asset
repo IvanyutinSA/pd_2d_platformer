@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bridge.unity
     guid: 23cfc53fb35aa1f4fb6b9f4f3f000edc
+  - enabled: 1
+    path: Assets/Scenes/FirstLevel.unity
+    guid: 2efc6f5c384838443a7cbb2a159c664e
   m_configObjects: {}
