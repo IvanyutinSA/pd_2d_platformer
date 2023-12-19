@@ -74,7 +74,7 @@ public class PlayerMotions : MonoBehaviour
 
     private void CheckGround()
     {
-        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 1.5f);
         isGrounded = collider.Length > 1;
     }
 
