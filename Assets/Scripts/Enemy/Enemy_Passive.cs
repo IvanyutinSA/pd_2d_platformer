@@ -25,8 +25,6 @@ public class Enemy_Passive : MonoBehaviour
 
     public float delay = 1f; // delay after impact
 
-    public Animator animator;//animator
-
     private void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform; // for player positioning
@@ -82,7 +80,4 @@ public class Enemy_Passive : MonoBehaviour
             }
         }
     }
-
-
-
 }
