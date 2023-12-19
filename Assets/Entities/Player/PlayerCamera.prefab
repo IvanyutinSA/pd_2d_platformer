@@ -64,7 +64,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &4754397831713647156
 MonoBehaviour:
@@ -124,8 +124,8 @@ MonoBehaviour:
   - {fileID: 61584190827570502}
   - {fileID: 746827172003664870}
   - {fileID: 7519419731776927792}
-  fullHeart: {fileID: -2143586362, guid: c56b5e8a7a569f24e95ec1bd5d8fe7d2, type: 3}
-  damageHeart: {fileID: 875420109, guid: c56b5e8a7a569f24e95ec1bd5d8fe7d2, type: 3}
+  fullHeart: {fileID: -1402722471, guid: 2a65c9ee199473d4fb967eed46fdc5a8, type: 3}
+  damageHeart: {fileID: -97752984, guid: 2a65c9ee199473d4fb967eed46fdc5a8, type: 3}
 --- !u!1 &4508456602075977975
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8648814113195988674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.33, y: 0.28095484, z: -10}
+  m_LocalPosition: {x: -749.13306, y: 341.61636, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
