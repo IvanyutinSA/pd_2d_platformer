@@ -11,6 +11,8 @@ public class PlayerMotions : MonoBehaviour
 
     private bool isGrounded = false;
     private Rigidbody2D rb;
+    public Animator animator;
+    float horizontalMove;
 
     // Start is called before the first frame update
     private void Awake()
@@ -25,6 +27,8 @@ public class PlayerMotions : MonoBehaviour
 
     private void Update()
     {
+        horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         if (Input.GetButton("Horizontal"))
         {
             Run();
