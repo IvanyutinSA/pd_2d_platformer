@@ -12,7 +12,10 @@ public class PlayerMotions : MonoBehaviour
     private bool isGrounded = false;
     private Rigidbody2D rb;
     public Animator animator;
+    float inputHorizontal;
+    float inputVertical;
     float horizontalMove;
+    bool facingRight = true;
 
     // Start is called before the first frame update
     private void Awake()
@@ -23,11 +26,24 @@ public class PlayerMotions : MonoBehaviour
     private void FixedUpdate()
     {
         CheckGround();
+
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        inputVertical = Input.GetAxisRaw("Vertical");
+
+        if(inputHorizontal > 0 && !facingRight)
+        {
+            Flip();
+        }
+
+        if(inputHorizontal < 0 && facingRight)
+        {
+            Flip();
+        }
     }
 
     private void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+        horizontalMove = inputHorizontal * speed;
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         if (Input.GetButton("Horizontal"))
         {
@@ -36,6 +52,11 @@ public class PlayerMotions : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             Jump();
+            animator.SetBool("IsJumping", true);
+        }
+        else
+        {
+            animator.SetBool("IsJumping", false);
         }
     }
 
@@ -55,5 +76,14 @@ public class PlayerMotions : MonoBehaviour
     {
         Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.5f);
         isGrounded = collider.Length > 1;
+    }
+
+    private void Flip()
+    {
+        Vector3 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
+
+        facingRight = !facingRight;
     }
 }
