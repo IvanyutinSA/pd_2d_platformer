@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followingTarget: {fileID: 0}
+  followingTarget: {fileID: 556487304}
   parallaxStrength: 0.9
   disableVeticalParallax: 1
   cam: {fileID: 0}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 556487305}
   parallaxEffect: 0.7
 --- !u!212 &40496366
 SpriteRenderer:
@@ -1334,15 +1334,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1362,6 +1362,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
+--- !u!4 &556487304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
+  m_PrefabInstance: {fileID: 556487303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &556487305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8648814113195988674, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
+  m_PrefabInstance: {fileID: 556487303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &611798815
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +3045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followingTarget: {fileID: 0}
+  followingTarget: {fileID: 556487304}
   parallaxStrength: 0.5
   disableVeticalParallax: 1
   cam: {fileID: 0}
@@ -3051,7 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 556487305}
   parallaxEffect: 0.2
 --- !u!212 &839766204
 SpriteRenderer:
@@ -3537,7 +3547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followingTarget: {fileID: 0}
+  followingTarget: {fileID: 556487304}
   parallaxStrength: 0.7
   disableVeticalParallax: 1
   cam: {fileID: 0}
@@ -3553,7 +3563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 556487305}
   parallaxEffect: 0.5
 --- !u!212 &1334389877
 SpriteRenderer:
@@ -3632,7 +3642,7 @@ Transform:
   m_GameObject: {fileID: 1542280631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.8, y: 1.4, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1958199988}
@@ -3986,7 +3996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b960afd8e2f6d0a4eb130642e7d75ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followingTarget: {fileID: 0}
+  followingTarget: {fileID: 556487304}
   parallaxStrength: 0.3
   disableVeticalParallax: 1
   cam: {fileID: 0}
@@ -4002,7 +4012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539e8e1f7954a524ea115d9ff086e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 556487305}
   parallaxEffect: 0
 --- !u!212 &1958199991
 SpriteRenderer:
