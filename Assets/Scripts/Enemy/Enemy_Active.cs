@@ -25,6 +25,8 @@ public class Enemy_Active : MonoBehaviour
     public float delay = 0.7f; // delay before impact
     public float cooldown = 1f; // delay after impact
 
+    public Animator animator;
+
     private void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform; // for player positioning
@@ -36,13 +38,19 @@ public class Enemy_Active : MonoBehaviour
             if (readiness_attack)
             {
                 readiness_attack = false;
-                Invoke("Delay", delay); //calling a method with a delay
+                animator.SetBool("Attack", true);
+                Invoke("Animation", 0.1f); //calling a method with a delay
             }
         }
         else
         {
             Move();
         }
+    }
+    private void Animation()
+    {
+        animator.SetBool("Attack", false);
+        Invoke("Delay", delay);
     }
 
     private void Delay() //inflicts a home attack if the player does not leave the target area
@@ -77,6 +85,9 @@ public class Enemy_Active : MonoBehaviour
             else
             {
                 movingForward = false;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
             }
         }
         else
@@ -89,6 +100,9 @@ public class Enemy_Active : MonoBehaviour
             else
             {
                 movingForward = true;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
             }
         }
     }

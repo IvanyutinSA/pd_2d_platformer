@@ -23,7 +23,9 @@ public class Enemy_Passive : MonoBehaviour
     public int amount = -1;// damage
     private bool readiness_attack = true; // readiness to attack
 
-    public float delay = 1f; // delay after impact
+    public float delay = 0.8f; // delay after impact
+
+    public Animator animator;
 
     private void Update()
     {
@@ -38,13 +40,20 @@ public class Enemy_Passive : MonoBehaviour
                 Health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
                 Health.Change(amount);
                 readiness_attack = false;
-                Invoke("Delay", delay); //calling a method with a delay 
+                animator.SetBool("Attack", true);
+                Invoke("Animation", 0.1f);
             }
         }
         else
         {
             Move();
         }
+    }
+    private void Animation() //attack animaton
+    {
+        animator.SetBool("Attack", false);
+        Invoke("Delay", delay);
+
     }
 
     private void Delay() //attack delay
@@ -65,6 +74,9 @@ public class Enemy_Passive : MonoBehaviour
             else
             {
                 movingForward = false;
+                Vector3 theScale =  transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
             }
         }
         else
@@ -77,6 +89,9 @@ public class Enemy_Passive : MonoBehaviour
             else
             {
                 movingForward = true;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
             }
         }
     }
