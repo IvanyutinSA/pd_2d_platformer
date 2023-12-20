@@ -484,19 +484,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 315886943547178281, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_Size.x
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 315886943547178281, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_Size.y
-      value: 16
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 315886943547178281, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+      objectReference: {fileID: 4723107735738678597, guid: c1cdd26cc09ad224884556bc4d8296ae, type: 3}
     - target: {fileID: 315886943547178281, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_DrawMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 315886943547178286, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_RootOrder
@@ -504,11 +504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 315886943547178286, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.060000002
       objectReference: {fileID: 0}
     - target: {fileID: 315886943547178286, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.0375
       objectReference: {fileID: 0}
     - target: {fileID: 315886943547178286, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4923,14 +4923,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d325e541787c14d8a48d97aaf7a714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   position_start: 42
   position_fnish: 56
   player: {fileID: 0}
   Health: {fileID: 0}
-  detectionRange: 0.8
+  detectionRange: 0.9
   amount: -1
   delay: 1
+  animator: {fileID: 1957911067}
 --- !u!61 &1957911063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4948,15 +4949,36 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 10, y: 16}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 13, y: 26}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 13, y: 26}
   m_EdgeRadius: 0
+--- !u!95 &1957911067
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957911061}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f847c80db843d64991b7e048d67f423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2008806515
 GameObject:
   m_ObjectHideFlags: 0
