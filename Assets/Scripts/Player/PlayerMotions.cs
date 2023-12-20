@@ -8,6 +8,13 @@ public class PlayerMotions : MonoBehaviour
     [SerializeField] LayerMask platformLayerMask;
     [SerializeField] private float speed = 9f;
     [SerializeField] private float jumpForce = 7f;
+    [SerializeField] private float attack = 1;
+
+    public bool isAttacking = false;
+    public bool isRecharged = true;
+
+    public float attackRange;
+    public LayerMask enemy;
 
     private bool isGrounded = false;
     private Rigidbody2D rb;
@@ -21,7 +28,10 @@ public class PlayerMotions : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
+        animator = GetComponent<Animator>();
+        isRecharged = true;
+        attackRange = 1; 
+}
 
     private void FixedUpdate()
     {
@@ -30,12 +40,12 @@ public class PlayerMotions : MonoBehaviour
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
-        if(inputHorizontal > 0 && !facingRight)
+        if (inputHorizontal > 0 && !facingRight)
         {
             Flip();
         }
 
-        if(inputHorizontal < 0 && facingRight)
+        if (inputHorizontal < 0 && facingRight)
         {
             Flip();
         }
@@ -45,11 +55,11 @@ public class PlayerMotions : MonoBehaviour
     {
         horizontalMove = inputHorizontal * speed;
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-        if (Input.GetButton("Horizontal"))
+        if (!isAttacking && Input.GetButton("Horizontal"))
         {
             Run();
         }
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (!isAttacking && isGrounded && Input.GetButtonDown("Jump"))
         {
             Jump();
             animator.SetBool("IsJumping", true);
@@ -57,6 +67,10 @@ public class PlayerMotions : MonoBehaviour
         else
         {
             animator.SetBool("IsJumping", false);
+        }
+        if (Input.GetButton("Fire1"))
+        {
+            Attack();
         }
     }
 
@@ -70,6 +84,55 @@ public class PlayerMotions : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    private void Attack()
+    {
+        if (isGrounded && isRecharged)
+        {
+            isAttacking = true;
+            isRecharged = false;
+            Debug.Log("attack");
+            OnAttack();
+            StartCoroutine(AttackAnimation());
+            StartCoroutine(AttackCoolDown());
+        }
+    }
+
+    private void OnAttack()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(rb.position, attackRange, enemy);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Debug.Log("-hp");
+            try { 
+                colliders[i].GetComponent<HP_Enemy>().GetDamage(); 
+            }
+            catch
+            {
+
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(rb.position, attackRange);
+    }
+
+    private IEnumerator AttackAnimation()
+    {
+        yield return new WaitForSeconds(0.4f);
+        isAttacking = false;
+    }
+
+    private IEnumerator AttackCoolDown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isRecharged = true;
     }
 
     private void CheckGround()
