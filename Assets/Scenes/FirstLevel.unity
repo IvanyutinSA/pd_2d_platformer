@@ -482,6 +482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Passive
       objectReference: {fileID: 0}
+    - target: {fileID: 315886943547178280, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 315886943547178281, guid: 6afcf1f05e8464d49b17f15be70307f5, type: 3}
       propertyPath: m_Size.x
       value: 13
@@ -4102,7 +4106,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1274033387
@@ -4652,7 +4656,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1926778765
@@ -4750,6 +4754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3545855612167386480, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3545855612167386481, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: m_GravityScale
       value: 5
@@ -4837,6 +4845,18 @@ PrefabInstance:
     - target: {fileID: 3545855612167386484, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: jumpForce
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545855612167386484, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545855612167386484, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
+      propertyPath: enemy.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545855612167386484, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
+      propertyPath: platformLayerMask.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3545855612167386485, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
@@ -4979,6 +4999,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1957911071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957911061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d1ba00757fc3343ba7f7aecf8694e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 1
 --- !u!1 &2008806515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +5093,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2135282883

@@ -204,7 +204,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &40496362
@@ -3112,7 +3112,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &857231869
@@ -3478,6 +3478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Active
       objectReference: {fileID: 0}
+    - target: {fileID: 7497403341181471778, guid: 143561fd50b9eea449e91ca4e411a31c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143561fd50b9eea449e91ca4e411a31c, type: 3}
 --- !u!1 &1065542282 stripped
@@ -3528,6 +3532,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1065542285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065542282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d1ba00757fc3343ba7f7aecf8694e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 2
 --- !u!1 &1071554747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,7 +3995,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1951402913
@@ -4075,6 +4092,10 @@ PrefabInstance:
     - target: {fileID: 3545855612167386484, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
       propertyPath: jumpForce
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545855612167386484, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
+      propertyPath: enemy.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84fb66f871e62e24aa57e3da181be3f3, type: 3}
