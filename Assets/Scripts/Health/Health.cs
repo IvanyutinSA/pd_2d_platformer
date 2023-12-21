@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int lives = 5;
     [SerializeField] private int livesMax = 5;
     [SerializeField] private bool isLive = true;
+    public Animator animator;
 
     private void Awake()
     {
@@ -25,7 +26,8 @@ public class Health : MonoBehaviour
         if (lives <= 0)
         {
             isLive = false;
-            Invoke("PlayerDie", 2);
+            animator.SetTrigger("Death");
+            Invoke("PlayerDie", 1.1f);
             //PlayerDie();
         }
     }

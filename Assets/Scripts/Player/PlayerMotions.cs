@@ -8,7 +8,6 @@ public class PlayerMotions : MonoBehaviour
     [SerializeField] LayerMask platformLayerMask;
     [SerializeField] private float speed = 9f;
     [SerializeField] private float jumpForce = 7f;
-    [SerializeField] private float attack = 1;
 
     public bool isAttacking = false;
     public bool isRecharged = true;
@@ -70,7 +69,7 @@ public class PlayerMotions : MonoBehaviour
         }
         if (Input.GetButton("Fire1"))
         {
-            Attack();
+            Attack();         
         }
     }
 
@@ -90,12 +89,14 @@ public class PlayerMotions : MonoBehaviour
     {
         if (isGrounded && isRecharged)
         {
+            animator.SetTrigger("Attack");
+
             isAttacking = true;
             isRecharged = false;
             Debug.Log("attack");
-            OnAttack();
             StartCoroutine(AttackAnimation());
             StartCoroutine(AttackCoolDown());
+            Invoke("OnAttack", 0.5f);
         }
     }
 
