@@ -932,6 +932,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8648814113195988686, guid: 4a48c216f7b4d9e469fa5b54b8063246, type: 3}
   m_PrefabInstance: {fileID: 303221479}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1147206620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147206612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d7cef4ff627934bb1a7e9b84d25bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMusic1: {fileID: 6510134032145242299, guid: 66b8fc71e2acb674bb792a4f24839173, type: 3}
+  objs11: []
 --- !u!1 &1170864839
 GameObject:
   m_ObjectHideFlags: 0
